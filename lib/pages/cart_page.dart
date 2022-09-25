@@ -3,7 +3,7 @@ import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../models/coffee_model.dart';
-import '../models/cart_item.dart';
+import '../models/cart_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
