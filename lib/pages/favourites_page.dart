@@ -1,6 +1,5 @@
 import 'package:coffee_delivery/globals.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class FavouritesPage extends StatelessWidget {
   const FavouritesPage({Key? key}) : super(key: key);
@@ -14,15 +13,17 @@ class FavouritesPage extends StatelessWidget {
         elevation: 0,
         title: Text(
           "Favourites",
-          style: GoogleFonts.rosarivo(fontSize: 24),
+          style: TextStyle(fontFamily: 'Rosarivo', fontSize: 24),
         ),
       ),
       backgroundColor: Globals.primaryColor,
       body: Center(
           child: Text(
         'No favourite coffee yet.',
-        style:
-            GoogleFonts.rosarivo(fontSize: 20, color: Globals.secondaryColor),
+        style: TextStyle(
+            fontFamily: 'Rosarivo',
+            fontSize: 20,
+            color: Globals.secondaryColor),
       )),
     );
   }

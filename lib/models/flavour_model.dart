@@ -4,6 +4,10 @@ class Flavour {
   String image;
   String description;
 
+  // Animated card properties
+  double margin = 0;
+  bool isRotated = false;
+
   Flavour({
     required this.image,
     required this.description,

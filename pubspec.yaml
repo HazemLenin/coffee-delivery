@@ -35,13 +35,25 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  google_fonts: ^3.0.1
   dotted_decoration: ^2.0.0
   flutter_svg: ^1.1.5
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.10.0
+  flutter_native_splash: ^2.2.10+1
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/appicon2.png"
+  min_sdk_android: 16
+
+flutter_native_splash:
+  background_image: "assets/images/bg.png"
+  image: assets/images/appicon2.png
+  duration: 2 seconds
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -75,17 +87,25 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  fonts:
+    - family: Rosarivo
+      fonts:
+        - asset: fonts/Rosarivo/Rosarivo-Regular.ttf
+        - asset: fonts/Rosarivo/Rosarivo-Italic.ttf
+    - family: OpenSans
+      fonts:
+        - asset: fonts/OpenSans/OpenSans-Bold.ttf
+        - asset: fonts/OpenSans/OpenSans-BoldItalic.ttf
+        - asset: fonts/OpenSans/OpenSans-ExtraBold.ttf
+        - asset: fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf
+        - asset: fonts/OpenSans/OpenSans-Italic.ttf
+        - asset: fonts/OpenSans/OpenSans-Light.ttf
+        - asset: fonts/OpenSans/OpenSans-LightItalic.ttf
+        - asset: fonts/OpenSans/OpenSans-Medium.ttf
+        - asset: fonts/OpenSans/OpenSans-MediumItalic.ttf
+        - asset: fonts/OpenSans/OpenSans-Regular.ttf
+        - asset: fonts/OpenSans/OpenSans-SemiBold.ttf
+        - asset: fonts/OpenSans/OpenSans-SemiBOldItalic.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

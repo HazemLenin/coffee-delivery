@@ -1,6 +1,7 @@
 import 'package:coffee_delivery/models/cart_item_model.dart';
 import 'package:flutter/material.dart';
 import './models/flavour_model.dart';
+import 'dart:math';
 
 class Globals {
   static const primaryColor = Color(0xFF201520);
@@ -50,4 +51,20 @@ class Globals {
     'Macchiato'
   ];
   static List<CartItem> cartItems = [];
+  static void addToCart({required Flavour flavour, required String type}) {
+    final oldCartItems = Globals.cartItems.where(
+      (item) => item.flavour.name == flavour.name && item.type == type,
+    );
+    if (oldCartItems.isEmpty) {
+      CartItem newCartItem = CartItem(
+        flavour: flavour,
+        type: type,
+      );
+      Globals.cartItems.add(newCartItem);
+    } else {
+      oldCartItems.first.quantity++;
+    }
+  }
+
+  static double angle = 5 * pi / 100; // animated menu card angle = 5 deg
 }

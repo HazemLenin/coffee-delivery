@@ -23,9 +23,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(),
       body: pages[currentIndex],
 
+      /* Because of bottom navigation bar cannot change svg opacity, active icon argument has been added to each bottom navigation bar item */
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: const Color(0xFF22151F),

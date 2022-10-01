@@ -1,9 +1,8 @@
-import 'package:coffee_delivery/globals.dart';
+import '../globals.dart';
 import 'package:dotted_decoration/dotted_decoration.dart';
 
 import '../models/coffee_model.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -49,7 +48,7 @@ class _CartPageState extends State<CartPage> {
         elevation: 0,
         title: Text(
           "Cart",
-          style: GoogleFonts.rosarivo(fontSize: 24),
+          style: TextStyle(fontFamily: 'Rosarivo', fontSize: 24),
         ),
       ),
       backgroundColor: Globals.primaryColor,
@@ -115,30 +114,27 @@ class _CartPageState extends State<CartPage> {
                               children: [
                                 Text(
                                   Globals.cartItems[index].type,
-                                  style: GoogleFonts.rosario(
-                                    textStyle: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                    ),
+                                  style: TextStyle(
+                                    fontFamily: 'Rosarivo',
+                                    color: Colors.white,
+                                    fontSize: 14,
                                   ),
                                 ),
                                 Text(
                                   Globals.cartItems[index].flavour.name,
-                                  style: GoogleFonts.rosario(
-                                    textStyle: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                    ),
+                                  style: const TextStyle(
+                                    fontFamily: 'Rosarivo',
+                                    color: Colors.white,
+                                    fontSize: 12,
                                   ),
                                 ),
                                 Text(
                                   '₹${Globals.cartItems[index].flavour.price}',
-                                  style: GoogleFonts.openSans(
-                                    textStyle: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                  style: TextStyle(
+                                    fontFamily: 'OpenSans',
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ],
@@ -182,7 +178,8 @@ class _CartPageState extends State<CartPage> {
                                   child: Text(
                                     Globals.cartItems[index].quantity
                                         .toString(),
-                                    style: GoogleFonts.rosarivo(
+                                    style: TextStyle(
+                                      fontFamily: 'Rosarivo',
                                       fontSize: 20,
                                       color: Colors.white,
                                     ),
@@ -239,11 +236,13 @@ class _CartPageState extends State<CartPage> {
                         children: [
                           Text(
                             "Delivery Charges",
-                            style: GoogleFonts.rosarivo(color: Colors.white),
+                            style: TextStyle(
+                                fontFamily: 'Rosarivo', color: Colors.white),
                           ),
                           Text(
                             "₹49",
-                            style: GoogleFonts.openSans(
+                            style: TextStyle(
+                              fontFamily: 'OpenSans',
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
                             ),
@@ -258,11 +257,13 @@ class _CartPageState extends State<CartPage> {
                         children: [
                           Text(
                             "Taxes",
-                            style: GoogleFonts.rosarivo(color: Colors.white),
+                            style: TextStyle(
+                                fontFamily: 'Rosarivo', color: Colors.white),
                           ),
                           Text(
                             "₹64.87",
-                            style: GoogleFonts.openSans(
+                            style: TextStyle(
+                              fontFamily: 'OpenSans',
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
                             ),
@@ -291,14 +292,16 @@ class _CartPageState extends State<CartPage> {
                     children: [
                       Text(
                         "Grand Total",
-                        style: GoogleFonts.rosarivo(
+                        style: TextStyle(
+                          fontFamily: 'Rosarivo',
                           color: Colors.white,
                           fontSize: 20,
                         ),
                       ),
                       Text(
                         "₹1009.87",
-                        style: GoogleFonts.openSans(
+                        style: TextStyle(
+                          fontFamily: 'OpenSans',
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -319,7 +322,8 @@ class _CartPageState extends State<CartPage> {
                       borderRadius: BorderRadius.circular(10.0)),
                   child: Text(
                     "PAY NOW",
-                    style: GoogleFonts.openSans(
+                    style: TextStyle(
+                      fontFamily: 'OpenSans',
                       color: Globals.primaryColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
