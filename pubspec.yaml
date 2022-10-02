@@ -53,7 +53,7 @@ flutter_icons:
 flutter_native_splash:
   background_image: "assets/images/bg.png"
   image: assets/images/appicon2.png
-  duration: 2 seconds
+  duration: 3 seconds
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

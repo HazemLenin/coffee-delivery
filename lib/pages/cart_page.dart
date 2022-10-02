@@ -18,26 +18,26 @@ class _CartPageState extends State<CartPage> {
   final itemBorderRadius = 15.0;
   final buttonSize = 30.0;
   final buttonBorderRadius = 8.0;
-  final coffees = [
-    Coffee(
-      type: "Cappuccino",
-      flavour: "Dalgona Macha",
-      image: "assets/images/product4.jpg",
-      price: 299,
-    ),
-    Coffee(
-      type: "Cappuccino",
-      flavour: "Bursting Blueberry",
-      image: "assets/images/product5.jpg",
-      price: 249,
-    ),
-    Coffee(
-      type: "Cappuccino",
-      flavour: "Cinnamon & Cocoa",
-      image: "assets/images/product3.jpg",
-      price: 299,
-    ),
-  ];
+
+  double deliveryCharges = 49;
+  double taxes = 64.87;
+
+  double total() {
+    return Globals.cartItems.fold(0,
+        (total, current) => total + (current.flavour.price * current.quantity));
+  }
+
+  double grandtotal(total, deliveryCharges, taxes) {
+    return total + deliveryCharges + taxes;
+  }
+
+  String totalString() {
+    return total().toStringAsFixed(2);
+  }
+
+  String grandtotalString() {
+    return grandtotal(total(), deliveryCharges, taxes).toStringAsFixed(2);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class _CartPageState extends State<CartPage> {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: pagePadding),
                   child: Container(
-                    height: 96,
+                    height: 100,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(itemBorderRadius),
                       color: Colors.white.withOpacity(.1),
@@ -159,6 +159,11 @@ class _CartPageState extends State<CartPage> {
                                           0) {
                                         Globals.cartItems[index].quantity--;
                                       }
+                                      if (Globals.cartItems[index].quantity ==
+                                          0) {
+                                        Globals.cartItems.removeAt(index);
+                                      }
+                                      ;
                                     });
                                   },
                                   child: Container(
@@ -240,7 +245,7 @@ class _CartPageState extends State<CartPage> {
                                 fontFamily: 'Rosarivo', color: Colors.white),
                           ),
                           Text(
-                            "₹49",
+                            "₹$deliveryCharges",
                             style: TextStyle(
                               fontFamily: 'OpenSans',
                               color: Colors.white,
@@ -261,7 +266,7 @@ class _CartPageState extends State<CartPage> {
                                 fontFamily: 'Rosarivo', color: Colors.white),
                           ),
                           Text(
-                            "₹64.87",
+                            "₹$taxes",
                             style: TextStyle(
                               fontFamily: 'OpenSans',
                               color: Colors.white,
@@ -299,7 +304,7 @@ class _CartPageState extends State<CartPage> {
                         ),
                       ),
                       Text(
-                        "₹1009.87",
+                        "₹${grandtotalString()}",
                         style: TextStyle(
                           fontFamily: 'OpenSans',
                           color: Colors.white,

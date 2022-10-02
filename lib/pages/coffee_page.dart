@@ -10,19 +10,10 @@ class CoffeePage extends StatefulWidget {
   CoffeePage({super.key, required this.type, required this.coffeeFlavour});
 
   @override
-  State<CoffeePage> createState() => _CoffeePageState(
-      flavour: this.coffeeFlavour,
-      type: this.type); // Pass flavour and type to the widget state
+  State<CoffeePage> createState() => _CoffeePageState();
 }
 
 class _CoffeePageState extends State<CoffeePage> {
-  Flavour flavour;
-  String type;
-  _CoffeePageState({
-    required this.flavour,
-    required this.type,
-  });
-
   List<String> milkTypes = [
     'Oat Milk',
     'Soy Milk',
@@ -46,9 +37,12 @@ class _CoffeePageState extends State<CoffeePage> {
                 ClipRRect(
                   borderRadius: BorderRadiusDirectional.circular(40),
                   child: Container(
-                    color: Colors.black,
-                    child: Image.asset(
-                      widget.coffeeFlavour.image,
+                    color: Globals.primaryColor,
+                    child: Hero(
+                      tag: widget.coffeeFlavour.name,
+                      child: Image.asset(
+                        widget.coffeeFlavour.image,
+                      ),
                     ),
                   ),
                 ),
@@ -198,7 +192,8 @@ class _CoffeePageState extends State<CoffeePage> {
                 Expanded(
                   child: MaterialButton(
                     onPressed: () {
-                      Globals.addToCart(flavour: this.flavour, type: this.type);
+                      Globals.addToCart(
+                          flavour: widget.coffeeFlavour, type: widget.type);
                       Navigator.push(
                         context,
                         PageRouteBuilder(

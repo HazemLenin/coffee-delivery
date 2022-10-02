@@ -248,8 +248,11 @@ class _MenuPageState extends State<MenuPage> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          child: Image.asset(
-                            coffeeFlavour.image,
+                          child: Hero(
+                            tag: coffeeFlavour.name,
+                            child: Image.asset(
+                              coffeeFlavour.image,
+                            ),
                           ),
                         ),
                       ),
@@ -329,6 +332,24 @@ class _MenuPageState extends State<MenuPage> {
                               Globals.addToCart(
                                   flavour: coffeeFlavour,
                                   type: Globals.types[selectedTypeIndex]);
+
+                              // Notification pop up
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  action: SnackBarAction(
+                                    label: 'Dismiss',
+                                    onPressed: () {},
+                                    textColor: Globals.secondaryColor,
+                                  ),
+                                  content: Text("Added To Cart!"),
+                                  backgroundColor: Color(0xFF22151F),
+                                  padding: EdgeInsets.all(8),
+                                  margin: EdgeInsets.only(
+                                      bottom: 2, right: 5, left: 5),
+                                  behavior: SnackBarBehavior.floating,
+                                  duration: Duration(seconds: 3),
+                                ),
+                              );
                             },
                             icon: const Icon(
                               Icons.add,
